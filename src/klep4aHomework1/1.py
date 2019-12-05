@@ -1,3 +1,2 @@
-print ('Hello, world!')
-
 # Output
+print('Hello, world!')
