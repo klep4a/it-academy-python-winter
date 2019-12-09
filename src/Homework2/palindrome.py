@@ -6,8 +6,8 @@ while copy_num:
     revers_num = revers_num * 10 + digit
     copy_num = copy_num // 10
 if n == revers_num:
-    print ('Это палиндром!')
+    print('Это палиндром!')
 elif abs(n) == revers_num:
-    print ('Это отрицательный :-) палиндром!')
+    print('Это отрицательный :-) палиндром!')
 else:
-    print ('Это не палиндром!')
+    print('Это не палиндром!')
