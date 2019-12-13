@@ -20,15 +20,16 @@ for i in range(n):
 
 if __name__ == '__main__':
     s = input()
-print (any(c.isalnum() for c in s))
-print (any(c.isalpha() for c in s))
-print (any(c.isdigit() for c in s))
-print (any(c.islower() for c in s))
-print (any(c.isupper() for c in s))
+print(any(c.isalnum() for c in s))
+print(any(c.isalpha() for c in s))
+print(any(c.isdigit() for c in s))
+print(any(c.islower() for c in s))
+print(any(c.isupper() for c in s))
 
 # https://www.hackerrank.com/challenges/capitalize
 
 s = input()
+
 
 def solve(s):
     for x in s.split():
@@ -53,19 +54,18 @@ for i in sorted(arr, reverse=True):
 
 # https://www.hackerrank.com/challenges/find-a-string
 
+
 def count_substring(string, sub_string):
-    x=0
+    x = 0
     for i in range(0, len(string) - len(sub_string) + 1, 1):
-        item = string[i:(i+len(sub_string))]
+        item = string[i:(i + len(sub_string))]
         if item == sub_string:
-        # numitem = i
-        # print(numitem, end=' ')
             x += 1
     return x
 
 if __name__ == '__main__':
     string = input().strip()
-    sub_string = input().strip()    
+    sub_string = input().strip()
     count = count_substring(string, sub_string)
     print(count)
 
