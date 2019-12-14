@@ -7,6 +7,7 @@ import csv
 def cmp(a, b):
     return (a > b) - (a < b)
 
+
 # write stocks data as comma-separated values
 with open('src\\klep4aHomework1\\stocks.csv', 'w', newline='') as stocksFileW:
     writer = csv.writer(stocksFileW)

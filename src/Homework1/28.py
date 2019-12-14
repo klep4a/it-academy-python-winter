@@ -28,6 +28,7 @@ def add_queen(queens):
             pass
     raise BailOut
 
+
 queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
