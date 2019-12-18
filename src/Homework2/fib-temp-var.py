@@ -4,11 +4,7 @@
 """
 
 n = int(input())
-for i in range(n - 1):
-    if i == 0:
-        fib1, fib2 = 0, 1  # Надеюсь правильно понял
-    else:                  # временные переменные
-        fib = fib1 + fib2
-        fib1, fib2 = fib2, fib
-    if i == n - 2:
-        print(fib)
+fib1, fib2 = 0, 1
+for i in range(n-1):
+    fib1, fib2 = fib2, fib1 + fib2
+print(fib1)

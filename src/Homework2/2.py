@@ -161,12 +161,13 @@ Print the runner-up score.
 if __name__ == '__main__':
     n = int(input())
     arr = list(map(int, input().split()))
-max = arr[0]
+max_score = arr[0]
 for i in arr:
-    if i >= max:
-        max = i
-for i in sorted(arr, reverse=True):
-    if i < max:
+    if i >= max_score:
+        max_score = i
+arr.sort(reverse=True)
+for i in arr:
+    if i < max_score:
         print(i)
         break
 
@@ -201,12 +202,11 @@ of the substring in the original string.
 
 
 def count_substring(string, sub_string):
-    x = 0
-    for i in range(0, len(string) - len(sub_string) + 1, 1):
-        item = string[i:(i + len(sub_string))]
-        if item == sub_string:
-            x += 1
-    return x
+    count = 0
+    while sub_string in string:
+        count += 1
+        string = string[string.find(sub_string) + 1:]
+    return count
 
 
 if __name__ == '__main__':
