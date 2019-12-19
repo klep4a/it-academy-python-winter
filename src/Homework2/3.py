@@ -12,7 +12,7 @@ n = 'каждый: охотник; {желает} знать, где? сидит
 
 max_word = ''
 for i in n:
-    i = i.strip('.,?:;[]{}()')
+    i = i.strip('"\'-_`.,!*&^%$#@~/+=?:;[]{}()')
     if len(i) > len(max_word):
         max_word = i
 print(max_word)
