@@ -4,9 +4,10 @@
 "abc cde def", то должно быть выведено "abcdef".
 """
 
+import string
 n = input()
 result = ''
-for i in n.replace(' ', ''):
-    if i not in result:
+for i in n:
+    if i not in result and i not in string.whitespace:
         result += i
 print(result)

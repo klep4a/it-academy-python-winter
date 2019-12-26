@@ -4,16 +4,13 @@
 длины. Задача требует работать только с числами (без конвертации числа
 в строку)
 """
-n = int(input('Введите целое число\n'))
-copy_num = abs(n)
+num = int(input('Введите целое число\n'))
+copy_num = num
 revers_num = 0
 while copy_num:
-    digit = copy_num % 10
-    revers_num = revers_num * 10 + digit
-    copy_num = copy_num // 10
-if n == revers_num:
+    revers_num = revers_num * 10 + copy_num % 10
+    copy_num //= 10
+if num == revers_num:
     print('Это палиндром!')
-elif abs(n) == revers_num:
-    print('Это отрицательный :-) палиндром!')
 else:
     print('Это не палиндром!')

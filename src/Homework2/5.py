@@ -3,11 +3,12 @@
 букв в введенной строке. Учитывать только английские буквы.
 """
 
+import string
 n = input()
 low_symb, upp_symb = 0, 0
 for i in n:
-    if 'a' <= i <= 'z':
+    if i in string.ascii_lowercase:
         low_symb += 1
-    elif 'A' <= i <= 'Z':
+    elif i in string.ascii_uppercase:
         upp_symb += 1
-print(upp_symb, low_symb)
+print('строчных =', low_symb, 'прописных =', upp_symb)
