@@ -11,10 +11,10 @@
 tpl = tuple(['a', 'b', 'c'])
 lst = list(('a', 'b', 'c'))
 print(tpl, lst, tpl == tuple(lst), lst == list(tpl))
-#>>> ('a', 'b', 'c') ['a', 'b', 'c'] True True
+# >>> ('a', 'b', 'c') ['a', 'b', 'c'] True True
 tpl, lst = ('a', 2, 'python'), ['a', 2, 'python']
 print(tpl, lst)
-#>>> ('a', 2, 'python') ['a', 2, 'python']
+# >>> ('a', 2, 'python') ['a', 2, 'python']
 tpl = (
     '123',
 )
