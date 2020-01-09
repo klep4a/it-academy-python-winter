@@ -11,17 +11,8 @@
 tpl = tuple(['a', 'b', 'c'])
 lst = list(('a', 'b', 'c'))
 print(tpl, lst, tpl == tuple(lst), lst == list(tpl))
-# >>> ('a', 'b', 'c') ['a', 'b', 'c'] True True
-tpl, lst = ('a', 2, 'python'), ['a', 2, 'python']
+tpl, lst = tuple(x for x in('a', 2, 'python')), [x for x in('a', 2, 'python')]
 print(tpl, lst)
-# >>> ('a', 2, 'python') ['a', 2, 'python']
-tpl = (
-    '123',
-)
+tpl = ([1, 2, 3],)
 for x in tpl[0]:
     print(x, type(tpl), len(tpl))
-"""
-1 <class 'tuple'> 1
-2 <class 'tuple'> 1
-3 <class 'tuple'> 1
-"""

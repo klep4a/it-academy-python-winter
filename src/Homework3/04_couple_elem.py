@@ -8,13 +8,8 @@
 Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
 """
 
-# It works with numbers and chars
-lst = [x for x in input().split()]
-dct_ = {}.fromkeys(lst)
-for key in dct_.keys():
-    couple = 0
-    for indx, elem in enumerate(lst):
-        if key == elem:
-            couple += lst[indx + 1:].count(elem)
-    dct_[key] = couple
-print(sum(dct_.values()))
+lst = input().split()
+couple = 0
+for i in range(len(lst)):
+    couple += lst[i + 1:].count(lst[i])
+print(couple)

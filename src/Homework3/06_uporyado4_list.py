@@ -8,8 +8,9 @@
 за один проход по списку. Распечатайте полученный список.
 """
 
-lst = [0, 1, 0, 1, 2, 0, 7]
-for el in lst:
-    if el == 0:
-        lst.append(lst.pop(lst.index(el)))
+lst = [0, 0, 1, 0, 1, 2, 0, 7]
+for i in lst:
+    if i == 0:
+        lst.remove(i)
+        lst.append(i)
 print(lst)
