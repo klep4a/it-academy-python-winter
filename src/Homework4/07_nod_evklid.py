@@ -6,8 +6,8 @@
 
 small, big = 215484565498465686464846546846516841646568166851, 462
 while big and small:
-  if big > small:
-    big %= small
-  else:
-    small %= big
+    if big > small:
+        big %= small
+    else:
+        small %= big
 print(big + small)

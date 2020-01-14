@@ -14,7 +14,7 @@
 Входные данные
 2
 Russia Moscow Petersburg Novgorod Kaluga
-Ukraine Kiev Donetsk Odessa    
+Ukraine Kiev Donetsk Odessa
 3
 Odessa
 Moscow
