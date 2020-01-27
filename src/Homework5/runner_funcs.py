@@ -8,7 +8,8 @@ c. runner(‘func’, ‘func1’...) - вызывает все переданн
 
 
 def nod_evklid(big=0, small=0):
-    """Computing the greatest common divisor (GCD) of two numbers ==
+    """
+    Computing the greatest common divisor (GCD) of two numbers ==
     naibolshiy obschiy delitel (NOD) dvuh chisel in russian translit,
     using the Euclidean algorithm and print them.
 
@@ -20,9 +21,6 @@ def nod_evklid(big=0, small=0):
     """
     print('Привет! Я функция {}, я делаю {}'.
           format(nod_evklid.__name__, nod_evklid.__doc__))
-    # if not big or small:
-    #     big = int(input('Введите первое число: '))
-    #     small = int(input('Введите второе число: '))
     while big and small:
         if big > small:
             big %= small
@@ -33,7 +31,8 @@ def nod_evklid(big=0, small=0):
 
 
 def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
-    """Return and print the quantity of
+    """
+    Return and print the quantity of
     elements intersection of two lists.
     (i.e. quantity of all elements that are in both lists.)
 
@@ -51,7 +50,8 @@ def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
 
 
 def fizz_buzz():
-    """FizzBuzz печатает цифры от 1 до 32,
+    """
+    FizzBuzz печатает цифры от 1 до 32,
     но вместо чисел, кратных 3 пишет Fizz, вместо чисел кратных 5
     пишет Buzz, а вместо чисел одновременно кратных и 3 и 5 - FizzBuzz
     """
@@ -62,9 +62,8 @@ def fizz_buzz():
 
 
 def runner(*funcs):
-    all_funcs = {nod_evklid.__name__: nod_evklid,
-                 num_intersect.__name__: num_intersect,
-                 fizz_buzz.__name__: fizz_buzz}
+    all_funcs = {k: v for k, v in globals().items()
+                 if not k.startswith(('__', 'runner'))}
     if funcs:
         for i in [*funcs]:
             all_funcs[i]()
@@ -74,5 +73,5 @@ def runner(*funcs):
 
 
 runner()
-# runner('num_intersect')
-# runner('nod_evklid', 'fizz_buzz')
+runner('num_intersect')
+runner('nod_evklid', 'fizz_buzz')
