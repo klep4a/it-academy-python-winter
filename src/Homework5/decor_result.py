@@ -9,11 +9,11 @@ from runner_funcs import nod_evklid, runner
 
 def decor_result(func):
     def wr(*args, **kwargs):
-        with open('results.txt', 'a') as file:
-            file.write('Я функция: {} '
-                       'Result: {}  {}\n'.format(func.__name__,
-                                                 func(*args, **kwargs),
-                                                 str(datetime.today())[:-10]))
+        with open('results.txt', 'a') as f:
+            f.write('Я функция: {} '
+                    'Result: {}  {}\n'.format(func.__name__,
+                                              func(*args, **kwargs),
+                                              str(datetime.today())[:-10]))
         return func
     return wr
 
