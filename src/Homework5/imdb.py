@@ -15,11 +15,14 @@ def read_imdb():
             line_count, source_dict = 1, {}
             for line in file:
                 if 29 <= line_count < 279:
-                    source_dict[' '.join(line.split()[3:-1])] = [line.split()[2], line.split()[-1].strip('()')]
+                    source_dict[' '.join(line.split()[3:-1])] = \
+                        [line.split()[2], line.split()[-1].strip('()')]
                 line_count += 1
             top250_(source_dict.keys(), 'top250_movies.txt')
-            ratings_and_years_([i[0] for i in source_dict.values()], 'ratings.txt')
-            ratings_and_years_([i[-1] for i in source_dict.values()], 'years.txt')
+            ratings_and_years_([i[0] for i in source_dict.values()],
+                               'ratings.txt')
+            ratings_and_years_([i[-1] for i in source_dict.values()],
+                               'years.txt')
     except OSError:
         print("No file 'ratings.list'")
 

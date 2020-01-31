@@ -4,7 +4,8 @@
 """
 
 from datetime import datetime
-from runner_funcs import nod_evklid, runner
+from runner_funcs import nod_evklid
+from runner_funcs import runner
 
 
 def decor_result(func):
