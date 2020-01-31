@@ -15,31 +15,33 @@ def read_imdb():
             line_count, source_dict = 1, {}
             for line in file:
                 if 29 <= line_count < 279:
-                    source_dict[' '.join(line.split()[3:-1])] = line.split()[2:]
+                    source_dict[' '.join(line.split()[3:-1])] = [line.split()[2], line.split()[-1].strip('()')]
                 line_count += 1
-            top250_(source_dict)
-            ratings_([i[0] for i in sorted(source_dict.values(), reverse=True)])
-    except IOError:
+            top250_(source_dict.keys(), 'top250_movies.txt')
+            ratings_and_years_([i[0] for i in source_dict.values()], 'ratings.txt')
+            ratings_and_years_([i[-1] for i in source_dict.values()], 'years.txt')
+    except OSError:
         print("No file 'ratings.list'")
 
 
-def write_file(file_name, str_):
-    with open(os.path.join('data5', file_name), 'w+') as f:
+def write_file_(str_, name_file):
+    with open(os.path.join('data5', name_file), 'w+') as f:
         f.write(str_)
 
 
-def top250_(source):
+def top250_(source, name_file):
     str_250 = ''
     for key in source:
         str_250 += key + '\n'
-    write_file('top250_movies.txt', str_250)
+    write_file_(str_250, name_file)
 
 
-def ratings_(source):
-    str_ratings = ''
+def ratings_and_years_(source, name_file):
+    str_r_y = ''
     for i in sorted(set(source), reverse=True):
-        str_ratings += i + ' ' + '*' * source.count(i) + str(source.count(i)) + '\n'
-    write_file('ratings.txt', str_ratings)
+        rank, rank = 0, source.count(i)
+        str_r_y += i + '\t' + '}' * rank + str(rank) + '\n'
+    write_file_(str_r_y, name_file)
 
 
 read_imdb()
