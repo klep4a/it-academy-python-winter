@@ -8,8 +8,7 @@ c. runner(‘func’, ‘func1’...) - вызывает все переданн
 
 
 def nod_evklid(big=0, small=0):
-    """
-    Computing the greatest common divisor (GCD) of two numbers ==
+    """Computing the greatest common divisor (GCD) of two numbers ==
     naibolshiy obschiy delitel (NOD) dvuh chisel in russian translit,
     using the Euclidean algorithm and print them.
 
@@ -19,7 +18,7 @@ def nod_evklid(big=0, small=0):
     Return:
     one number == GCD (default == 0)
     """
-    print('Привет! Я функция {}, я делаю {}'.
+    print('\nПривет! Я функция {}, я делаю {}\n'.
           format(nod_evklid.__name__, nod_evklid.__doc__))
     while big and small:
         if big > small:
@@ -31,8 +30,7 @@ def nod_evklid(big=0, small=0):
 
 
 def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
-    """
-    Return and print the quantity of
+    """Return and print the quantity of
     elements intersection of two lists.
     (i.e. quantity of all elements that are in both lists.)
 
@@ -42,7 +40,7 @@ def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
     Return:
     one number == quantity of elements intersection (default == 2)
     """
-    print('Привет! Я функция {}, я делаю {}'.
+    print('\nПривет! Я функция {}, я делаю {}\n'.
           format(num_intersect.__name__, num_intersect.__doc__))
     print('Количество одинаковых элементов в двух списках =',
           len(set(lst1).intersection(set(lst2))))
@@ -50,12 +48,11 @@ def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
 
 
 def fizz_buzz():
-    """
-    FizzBuzz печатает цифры от 1 до 32,
+    """FizzBuzz печатает цифры от 1 до 32,
     но вместо чисел, кратных 3 пишет Fizz, вместо чисел кратных 5
     пишет Buzz, а вместо чисел одновременно кратных и 3 и 5 - FizzBuzz
     """
-    print('Привет! Я функция {}, я делаю {}'.
+    print('\nПривет! Я функция {}, я делаю {}\n'.
           format(fizz_buzz.__name__, fizz_buzz.__doc__))
     for i in range(1, 32):
         print('Fizz' * (i % 3 == 0) + "Buzz" * (i % 5 == 0) or i, end=' ')
