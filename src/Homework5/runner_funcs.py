@@ -10,13 +10,18 @@ c. runner(‘func’, ‘func1’...) - вызывает все переданн
 def nod_evklid(big=0, small=0):
 
     """Computing the greatest common divisor (GCD) of two numbers ==
+
     naibolshiy obschiy delitel (NOD) dvuh chisel in russian translit,
+
     using the Euclidean algorithm and print them.
 
 
     Args:
+
     two numbers
+
     Return:
+
     one number == GCD (default == 0)
     """
 
@@ -34,12 +39,16 @@ def nod_evklid(big=0, small=0):
 def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
 
     """Return and print the quantity of
+
     elements intersection of two lists.
+
     (i.e. quantity of all elements that are in both lists.)
 
 
     Args:
+
     two lists (default is [1, 2, 3] and [0, 1, 2])
+
     Return:
     one number == quantity of elements intersection (default == 2)
     """
@@ -52,8 +61,8 @@ def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
 
 
 def fizz_buzz():
-
     """FizzBuzz печатает цифры от 1 до 32,
+
     но вместо чисел, кратных 3 пишет Fizz, вместо чисел кратных 5
     пишет Buzz, а вместо чисел одновременно кратных и 3 и 5 - FizzBuzz
     """
