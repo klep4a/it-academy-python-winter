@@ -50,6 +50,7 @@ def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
     two lists (default is [1, 2, 3] and [0, 1, 2])
 
     Return:
+
     one number == quantity of elements intersection (default == 2)
     """
 
@@ -64,6 +65,7 @@ def fizz_buzz():
     """FizzBuzz печатает цифры от 1 до 32,
 
     но вместо чисел, кратных 3 пишет Fizz, вместо чисел кратных 5
+
     пишет Buzz, а вместо чисел одновременно кратных и 3 и 5 - FizzBuzz
     """
 
