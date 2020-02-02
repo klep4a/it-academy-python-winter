@@ -52,6 +52,7 @@ def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
 
     one number == quantity of elements intersection (default == 2)
     """
+
     print('Привет! Я функция {}, я делаю {}'.
           format(num_intersect.__name__, num_intersect.__doc__))
     print('Количество одинаковых элементов в двух списках =',
