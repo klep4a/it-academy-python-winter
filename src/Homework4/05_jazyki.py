@@ -37,5 +37,6 @@ all_langs = set.intersection(*langs.values())
 one_lang = set.union(*langs.values())
 print(f'количество языков, которые знают все {len(all_langs)}\n'
       f'список таких языков {list(all_langs)}\n'
-      f'количество языков, которые знает хотя бы один школьник {len(one_lang)}\n'
+      f'количество языков, которые знает хотя бы один школьник '
+      f'{len(one_lang)}\n'
       f'список таких языков {list(one_lang)}')
