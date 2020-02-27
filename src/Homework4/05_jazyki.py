@@ -29,10 +29,13 @@ French
 """
 
 langs = {}
-for i in range(int(input('количество школьников? '))):
-    langs[i] = set()
-    for j in range(int(input('количество языков школьника? '))):
-        langs[i].add(input('язык? '))
-al_ = set.intersection(*langs.values())
-one_ = set.union(*langs.values())
-print(len(al_), *list(al_), len(one_), *list(one_), sep='\n')
+for number in range(int(input('количество школьников? '))):
+    langs[number] = set()
+    for _ in range(int(input('количество языков школьника? '))):
+        langs[number].add(input('язык? '))
+all_langs = set.intersection(*langs.values())
+one_lang = set.union(*langs.values())
+print(f'количество языков, которые знают все {len(all_langs)}\n'
+      f'список таких языков {list(all_langs)}\n'
+      f'количество языков, которые знает хотя бы один школьник {len(one_lang)}\n'
+      f'список таких языков {list(one_lang)}')

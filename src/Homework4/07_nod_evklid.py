@@ -10,4 +10,4 @@ while big and small:
         big %= small
     else:
         small %= big
-print(big + small)
+print(big or small)

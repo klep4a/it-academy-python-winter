@@ -26,12 +26,16 @@ Russia
 Russia
 """
 
-dct_sities = {}
-for i in(range(int(input('количество стран? ')))):
-    line = input('строка? ').split()
-    dct_sities.update({}.fromkeys(line[1:], line[0]))
+dct_cities = {}
+for _ in range(int(input('количество стран? '))):
+    country, *cities = input('страна города через пробел? ').split()
+    for city in cities:
+        if city in dct_cities.keys():
+            dct_cities[city] += [country]
+        else:
+            dct_cities[city] = [country]
 request = []
-for i in range(int(input('число городов? '))):
+for _ in range(int(input('число городов? '))):
     request.append(input('город? '))
-for x in request:
-    print(dct_sities.get(x))
+for city in request:
+    print(*dct_cities.get(city))
