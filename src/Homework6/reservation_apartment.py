@@ -11,7 +11,7 @@ import datetime
 from datetime import date
 
 
-class Apartment:
+class Apartment(object):
     def __init__(self, adress):
         self.adress = adress
         self.print_welcome(guest.get_first_name())
@@ -32,7 +32,7 @@ class Apartment:
               f"{first_name} good stay!")
 
 
-class Guest:
+class Guest(object):
     def __init__(self, first_name, last_name, num_adults, num_children):
         self.first_name = first_name
         self.last_name = last_name
@@ -47,7 +47,7 @@ class Guest:
             f'with {self.num_adults - 1 + self.num_children} person'
 
 
-class Reservation:
+class Reservation(object):
     def __init__(self, checkin_date, day_stay, adress):
         self.checkin_date = checkin_date
         self.day_stay = day_stay
@@ -68,7 +68,7 @@ class Reservation:
             f'{self.adress})'
 
 
-class Firma:
+class Firma(object):
     apartments = ['Kolasa-9-24', 'Geroev-12-124']
     guest_list = []
     reservation_list = []
