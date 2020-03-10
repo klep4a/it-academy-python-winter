@@ -9,15 +9,13 @@ ratings.txt – гистограмма рейтингов, years.txt – гис�
 import os
 
 
-def read_imdb():
+def read_imdb(top):
     try:
         with open(os.path.join('data5', 'ratings.list')) as file:
-            line_count, source_dict = 1, {}
-            for line in file:
-                if 29 <= line_count < 279:
-                    source_dict[' '.join(line.split()[3:-1])] =\
-                        [line.split()[2], line.split()[-1].strip('()/I')]
-                line_count += 1
+            start, stop, source_dict = 28, 28 + top, {}
+            for line in file.readlines()[start:stop]:
+                source_dict[' '.join(line.split()[3:-1])] =\
+                    [line.split()[2], line.split()[-1].strip('()/I')]
             top250_(source_dict.keys(),
                     'top250_movies.txt')
             ratings_and_years_([i[0] for i in source_dict.values()],
@@ -49,4 +47,4 @@ def ratings_and_years_(source, name_file):
     write_file_(str_r_y, name_file)
 
 
-read_imdb()
+read_imdb(250)

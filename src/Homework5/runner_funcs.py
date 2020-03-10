@@ -32,8 +32,8 @@ def nod_evklid(big=0, small=0):
             big %= small
         else:
             small %= big
-    print('Наибольший общий делитель =', big + small)
-    return big + small
+    print('Наибольший общий делитель =', big or small)
+    return big or small
 
 
 def num_intersect(lst1=[1, 2, 3], lst2=[0, 1, 2]):
@@ -78,9 +78,10 @@ def fizz_buzz():
 
 def runner(*funcs):
     all_funcs = {k: v for k, v in globals().items()
-                 if not k.startswith(('__', 'runner'))}
+                 if not k.startswith(('__', 'runner'))
+                 and callable(v)}
     if funcs:
-        for i in [*funcs]:
+        for i in funcs:
             all_funcs[i]()
     else:
         for i in all_funcs:

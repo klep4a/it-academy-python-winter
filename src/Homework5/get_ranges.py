@@ -8,17 +8,20 @@
 
 
 def get_ranges(lst):
-    temp_list = []
+    temp_list = [lst[0]]
     ranges_list = []
-    for i in lst:
-        if i + 1 not in lst or i - 1 not in lst:
-            temp_list.append(i)
-            if i + 1 not in lst:
-                ranges_list.append(temp_list.copy())
-                temp_list.clear()
+    for i, el in enumerate(lst[1:]):
+        if i < len(lst[1:]) and el == lst[i] + 1:
+            temp_list.append(el)
+        else:
+            ranges_list.append(temp_list.copy())
+            temp_list.clear()
+            temp_list.append(el)
+    ranges_list.append(temp_list.copy())
+    temp_list.clear()
     for r in ranges_list:
         if len(r) > 1:
-            temp_list.append('-'.join(str(el) for el in r))
+            temp_list.append(f'{str(r[0])}-{str(r[-1])}')
         else:
             temp_list.append(str(r[0]))
     return ','.join(temp_list)
@@ -26,3 +29,5 @@ def get_ranges(lst):
 
 lst = [0, 1, 2, 3, 4, 7, 8, 10]
 print(get_ranges(lst))
+print(get_ranges([4, 7, 10]))
+print(get_ranges([2, 3, 8, 9]))

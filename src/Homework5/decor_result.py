@@ -11,7 +11,7 @@ from runner_funcs import runner
 def decor_result(func):
     def wr(*args, **kwargs):
         with open('results.txt', 'a') as f:
-            f.write('Я функция: {} '
+            f.write('I am function: {} '
                     'Result: {}  {}\n'.format(func.__name__,
                                               func(*args, **kwargs),
                                               str(datetime.today())[:-10]))
