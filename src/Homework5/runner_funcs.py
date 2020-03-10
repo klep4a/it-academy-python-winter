@@ -78,8 +78,8 @@ def fizz_buzz():
 
 def runner(*funcs):
     all_funcs = {k: v for k, v in globals().items()
-                 if not k.startswith(('__', 'runner'))
-                 and callable(v)}
+                 if not k.startswith(('__', 'runner')) and
+                 callable(v)}
     if funcs:
         for i in funcs:
             all_funcs[i]()
