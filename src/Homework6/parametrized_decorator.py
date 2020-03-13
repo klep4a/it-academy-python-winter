@@ -24,8 +24,10 @@ def count_errors(max_errors, runs):
                     errors += 1
                     if errors > max_errors:
                         res = e.args[0]
-                        raise TooManyErrors(f'Call {calls} to "{func.__name__}",'
-                                            f' Errors: {errors}, Result: {res}')
+                        raise TooManyErrors(
+                            f'Call {calls} to "{func.__name__}",'
+                            f' Errors: {errors}, Result: {res}'
+                        )
                     res = e.args[0]
                     print((f'Call {calls} to "{func.__name__}",'
                            f' Errors: {errors}, Result: {res}'))
